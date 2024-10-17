@@ -1,0 +1,3 @@
+STEP 1 - user will input two numbers N1 and N2(int type)
+STEP 2 - if they are different then make them same/equal means their values become equal.
+STEP 3 - o display the old value of changed number.
