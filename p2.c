@@ -65,15 +65,17 @@ printf("%d\n",actorstimeinminutesindrama[choice]);
 int s = actorsid[0];
 actorsid[0] = actorsid[1] ;
 actorsid[1] = s ;
-int check = 0;
+int count = 0;
 for(int i = 0; i<=5; i++)
 {
-    if(actorsid[i]%8==0)
+    if(actorsid[i]%8!=0)
     {
-        check = 1;
+        count++;
+        break;
+
     }
 }
-if(check == 1)
+if(count==0)
 {
     printf("Storing According to Pattern!");
 }
