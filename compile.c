@@ -86,29 +86,28 @@ int main()
             printf("%d\n", ParticipantsID[i]);
         }
     }
-
-    //Find First and Second Minimum
-    int fmin = 0;
-    int smin = 0;
+    
     int temp[6];
-    fmin = temp[0];
-    int fmini = 0;
-
-    for(int i = 1; i<=5; i++)
+    for(int i = 0; i<=5; i++)
     {
-        if(fmin<temp[i])
-        {
-            fmin = temp[i];
-            fmini = i;
-        }
+        temp[i] = ParticipantsID[i];
     }
 
-    temp[fmini] = 0;
-    for(int i = 1; i<=5; i++)
+    //Find First and Second Minimum
+    int newmin = ParticipantsID[0];
+    int lastmin = ParticipantsID[1];
+
+    for(int i = 2; i<6; i++)
     {
-        if(smin<temp[i])
+        if(ParticipantsID[i]<newmin)
         {
-            smin = temp[i];
+            lastmin = newmin;
+            newmin = ParticipantsID[i];
+            
+        }
+        else if (ParticipantsID[i]<lastmin)
+        {
+            lastmin = ParticipantsID[i];
         }
     }
 
@@ -120,10 +119,11 @@ int main()
             isprime = 0;
             break;
         }
-        else
-        isprime = 1;
+
     }
-     int count = 0;
+    if(isprime==1)
+    {
+    int count = 0;
     EventID++;
     while(count<3)
     {
@@ -153,6 +153,7 @@ int main()
         }
         EventID++;
     }
+    }
     // Count Uppercase Letters in CityName
     int uppercaseCount = 0;
     for (int i = 0; i<= strlen(CityName); i++) 
@@ -166,15 +167,17 @@ int main()
     
     // Store Uppercase Letters in New Array (NEW) and print when half are Capital
     char NEW[25];
+    int j = 0;
     if(uppercaseCount>=strlen(CityName)/2)
     {
     for (int i = 0; i < strlen(CityName); i++) 
     {
         if (CityName[i] >= 'A' && CityName[i] <= 'Z') 
-        
-            NEW[i] = CityName[i];
+        {
+            NEW[j] = CityName[i];
+            j++;}
     }
-    
+    NEW[j]='\0';
     puts(NEW);
     }
 
