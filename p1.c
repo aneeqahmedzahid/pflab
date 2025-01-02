@@ -117,13 +117,23 @@ message “Yes” or “No”.
 4-index DishID value: 5 Digit value */
 
 
-f = 1;
+int f = 1;
 for(int i = 0 ;i<5; i++)
 {
-    if(R.DishesIDs[i]!=i+1)
+    int r = R.DishesIDs[i];
+    int length = 0;
+    while(r>0)
+    {
+        r = r / 10;
+        length ++ ;
+    }
+    if(length!=i+1)
     {
         f = 0;
     }
+    else
+    f = 1;
+
 }
 if(f==1)
 {
@@ -147,7 +157,12 @@ if(checkfirstvalue%2==0)
 {
     for(int i = 1 ; i<5; i++)
     {
+        int c = 0;
         if(R.DishesIDs[i]%2!=0)
+        {
+            c++;
+        }
+        if(c==2)
         {
             oddcount++;
             secondoddvalue = R.DishesIDs[i];
