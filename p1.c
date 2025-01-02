@@ -109,7 +109,7 @@ TotalEarnings.*/
     printf("%d",R.DishesIDs[i_max]);
 
  /*  Check that DishIDs array  Restaurant values are stored in following sequence or not. Display the 
-message “Yes” or “No”.
+message â€œYesâ€ or â€œNoâ€.
 0-index DishID value: 1 Digit value
 1-index DishID value: 2 Digit value
 2-index DishID value: 3 Digit value
@@ -127,12 +127,12 @@ for(int i = 0 ;i<5; i++)
         r = r / 10;
         length ++ ;
     }
-    if(length!=i+1)
+    if(length!=(i+1))
     {
-        f = 0;
+        f = 0 ;
+        break;
     }
-    else
-    f = 1;
+    
 
 }
 if(f==1)
